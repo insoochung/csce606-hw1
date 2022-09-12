@@ -11,8 +11,8 @@ def max_2_sum(arr)
 end
 
 def sum_to_n?(arr, number)
-  arr.permutation(2).to_a.each do |(x, y)|
-    return true if x + y == number
+  for perm in arr.permutation(2)
+    return true if perm.sum == number
   end
   return false
 end
@@ -35,7 +35,6 @@ end
 
 # Part 3
 
-# Object representing a book
 # Object representing a book
 class BookInStock
   def initialize(isbn, price)
